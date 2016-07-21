@@ -6,19 +6,21 @@ module GitFindCommitter
       @branch = branch
       @access_token = nil
       @limit = 2
-      @uri = "github.com"
-      @base_repo_dir = '/tmp/git_find_committer'
+      @repo_uri = "https://github.com"
+      @tmp_repo_dir = '/tmp/git_find_committer'
     end
-    attr_accessor :owner, :repo, :branch, :access_token, :limit, :uri, :base_repo_dir
+    attr_accessor :owner, :repo, :repo_name, :branch, :access_token, :limit, :repo_uri, :tmp_repo_dir
 
     def set_repo(repo)
+      @repo = repo
       repo = repo.split("/")
       @owner = repo[0]
-      @repo  = repo[1]
+      @repo_name = repo[1]
+      self
     end
 
-    def repo_dir
-      File.join(@base_repo_dir, @repo)
+    def tmp_repo_path
+      File.join(@tmp_repo_dir, @repo_name)
     end
   end
 end

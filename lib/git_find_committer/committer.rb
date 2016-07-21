@@ -7,7 +7,7 @@ module GitFindCommitter
     end
 
     def diff_files
-      `cd #{@config.repo_dir} && git diff --name-only origin/#{@config.branch} origin/master`.split("\n").map { |val| val.chomp }
+      `cd #{@config.tmp_repo_path} && git diff --name-only origin/#{@config.branch} origin/master`.split("\n").map { |val| val.chomp }
     end
 
     def aggregate
@@ -28,7 +28,7 @@ module GitFindCommitter
     end
 
     def find(file)
-      {"#{file}" => `cd #{@config.repo_dir} && git log --pretty=format:"%an" #{file} 2>/dev/null` }.each_with_object(Hash.new(0)) do |(file, committer), k|
+      {"#{file}" => `cd #{@config.tmp_repo_path} && git log --pretty=format:"%an" #{file} 2>/dev/null` }.each_with_object(Hash.new(0)) do |(file, committer), k|
         committer.split("\n").each {|r| k[r]+=1 }
       end.sort {|(k1, v1), (k2, v2)| v2 <=> v1 }.to_h
     end
