@@ -10,7 +10,7 @@ module GitFindCommitter
       `cd #{@config.tmp_repo_path} && git diff --name-only origin/#{@config.branch} origin/master`.split("\n").map { |val| val.chomp }
     end
 
-    def aggregate
+    def search
       Repository.new(@config).prepare_repo
 
       result = diff_files.each_with_object(Hash.new(0)) do |file, k|

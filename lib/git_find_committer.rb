@@ -12,8 +12,8 @@ module GitFindCommitter
     yield configuration if block_given?
   end
 
-  def self.aggregate(repo, branch)
+  def self.search(repo, branch)
     committer = Committer.new(repo, branch, self.configuration)
-    committer.aggregate
+    committer.search
   end
 end
