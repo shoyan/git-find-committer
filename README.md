@@ -24,7 +24,7 @@ Or install it yourself as:
 
 ```ruby
 GitFindCommitter.search(repo: 'balloonbros/sutekki', branch: 'add-ui')
-=> {"Shohei Yamasaki"=>51, "keitakawamoto"=>21}
+=> [{:name=>"Shohei Yamasaki", :commit_count=>51}, {:name=>"keitakawamoto", :commit_count=>21}]
 ```
 
 ## Working with GitHub Enterprise
