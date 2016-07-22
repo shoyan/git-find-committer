@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name          = "git_find_committer"
   spec.version       = GitFindCommitter::VERSION
   spec.authors       = ["Shohei Yamasaki"]
-  spec.email         = ["s-yamasaki@pepabo.com"]
+  spec.email         = ["yamasaki0406@gmail.com"]
 
-  spec.summary       = %q{git find committer}
-  spec.description   = %q{git find committer}
+  spec.summary       = %q{The GitFindCommitter is a tool to find the committers as a target the modified file.}
+  spec.description   = %q{The GitFindCommitter is a tool to find the committers as a target the modified file.}
   spec.homepage      = "https://github.com/shoyan/git_find_committer"
   spec.license       = "MIT"
 
@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler"
+  spec.add_development_dependency "bundler", "~> 1.12"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "pry"

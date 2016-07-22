@@ -2,9 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/shoyan/git_find_committer/tree/master.svg?style=svg)](https://circleci.com/gh/shoyan/git_find_committer/tree/master)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/git_find_committer`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+The GitFindCommitter is a tool to find the committers as a target the modified file. As the name, look for the committers from the commit history of Git. For example, if you modify the hoge.rb and fuga.rb in fix branch. GitFindCommitter looks for a committer to target the hoge.rb and fugue.rb.
 
 ## Installation
 
@@ -24,7 +22,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+GitFindCommitter.search(repo: 'balloonbros/sutekki', branch: 'add-ui')
+=> [{:name=>"Shohei Yamasaki", :commit_count=>51}, {:name=>"keitakawamoto", :commit_count=>21}]
+```
+
+## Working with GitHub Enterprise
+
+With a bit of setup, you can also use GitFindCommitter with your Github Enterprise instance.
+
+```ruby
+GitFindCommitter.configure do |c|
+  c.url = "https://<hostname>"
+  c.access_token = "<your 40 char token>"
+end
+```
 
 ## Development
 
