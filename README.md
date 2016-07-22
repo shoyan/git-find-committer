@@ -23,6 +23,8 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
+require 'git_find_committer'
+
 GitFindCommitter.search(repo: 'balloonbros/sutekki', branch: 'add-ui')
 => [{:name=>"Shohei Yamasaki", :commit_count=>51}, {:name=>"keitakawamoto", :commit_count=>21}]
 ```
