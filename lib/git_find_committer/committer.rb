@@ -19,12 +19,9 @@ module GitFindCommitter
         end
       end.sort { |(k1, v1), (k2, v2)| v2 <=> v1 }.to_h
 
-      def result.names(limit=0)
-        names = self.keys
-        return names if limit <= 0
-        names[0..(limit-1)]
+      result.each_with_object([]) do |(key,val),arr|
+        arr << {name: key, commit_count: val}
       end
-      result
     end
 
     def find(file)
