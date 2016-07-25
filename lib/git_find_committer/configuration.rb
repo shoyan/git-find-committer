@@ -7,8 +7,9 @@ module GitFindCommitter
       @access_token = nil
       @url = "https://github.com"
       @tmp_repo_dir = '/tmp/git_find_committer'
+      @available_committer_names = nil
     end
-    attr_accessor :owner, :repo, :repo_name, :branch, :access_token, :url, :tmp_repo_dir
+    attr_accessor :owner, :repo, :repo_name, :branch, :access_token, :url, :tmp_repo_dir, :available_committer_names
 
     def set_repo(repo)
       @repo = repo

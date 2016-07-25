@@ -25,8 +25,10 @@ Or install it yourself as:
 ```ruby
 require 'git_find_committer'
 
-GitFindCommitter.search(repo: 'balloonbros/sutekki', branch: 'add-ui')
+committer = GitFindCommitter.search(repo: 'balloonbros/sutekki', branch: 'add-ui')
 => [{:name=>"Shohei Yamasaki", :commit_count=>51}, {:name=>"keitakawamoto", :commit_count=>21}]
+committer.names(1)
+=> ["Shohei Yamasaki"]
 ```
 
 ## Working with GitHub Enterprise
@@ -37,6 +39,16 @@ With a bit of setup, you can also use GitFindCommitter with your Github Enterpri
 GitFindCommitter.configure do |c|
   c.url = "https://<hostname>"
   c.access_token = "<your 40 char token>"
+end
+```
+
+## Filtering
+
+You can filter the committers.
+
+```ruby
+GitFindCommitter.configure do |c|
+  c.available_committer_name = %w(shoyan)
 end
 ```
 
