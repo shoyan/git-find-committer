@@ -3,6 +3,7 @@ require "git_find_committer/committer"
 require "git_find_committer/configuration"
 require "git_find_committer/repository"
 require "git_find_committer/filter"
+require "git_find_committer/response"
 
 module GitFindCommitter
   def self.configuration
