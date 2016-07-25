@@ -5,7 +5,11 @@ module GitFindCommitter
     end
 
     def select_committer(committer)
-      committer.select {|c| @config.available_committer_names.include?(c[:name]) }
+      unless @config.available_committer_names.nil?
+        committer.select {|c| @config.available_committer_names.include?(c[:name]) }
+      else
+        committer
+      end
     end
   end
 end

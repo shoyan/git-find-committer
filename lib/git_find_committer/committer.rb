@@ -22,7 +22,7 @@ module GitFindCommitter
       result = result.each_with_object([]) do |(key,val),arr|
         arr << {name: key, commit_count: val}
       end
-      Response.new(result)
+      Response.new(Filter.new(@config).select_committer(result))
     end
 
     def find(file)
