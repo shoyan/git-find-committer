@@ -7,7 +7,8 @@ module GitFindCommitter
     end
 
     def diff_files
-      `cd #{@config.tmp_repo_path} && git diff --name-only origin/#{@config.branch} origin/master`.split("\n").map { |val| val.chomp }
+      diff_base = `cd #{@config.tmp_repo_path} && git merge-base origin/#{@config.branch} origin/master`
+      `cd #{@config.tmp_repo_path} && git diff --name-only origin/#{@config.branch} #{diff_base}`.split("\n").map { |val| val.chomp }
     end
 
     def search
