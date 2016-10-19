@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/shoyan/git_find_committer/tree/master.svg?style=svg)](https://circleci.com/gh/shoyan/git_find_committer/tree/master)
 
-The GitFindCommitter is a tool to find the committers as a target the modified file. As the name, look for the committers from the commit history of Git. For example, if you modify the hoge.rb and fuga.rb in fix branch. GitFindCommitter looks for a committer to target the hoge.rb and fugue.rb.
+The GitFindCommitter is a tool to find the committers as a target the modified file. As the name, look for the committers from the commit history of Git. For example, if you modify the hoge.rb and fuga.rb in fix branch. GitFindCommitter looks for a committer to target the hoge.rb and fuga.rb.
 
 ## Installation
 
