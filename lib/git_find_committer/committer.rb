@@ -11,8 +11,7 @@ module GitFindCommitter
     end
 
     def search
-      repo = Repository.new(@config).prepare_repo
-      repo.pull_master
+      Repository.new(@config).prepare_repo.pull_master
 
       result = diff_files.each_with_object(Hash.new(0)) do |file, k|
         find(file).each do |committer, commit_count|

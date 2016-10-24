@@ -10,10 +10,12 @@ module GitFindCommitter
       else
         `git clone #{generate_url} #{@config.tmp_repo_path}`
       end
+      self
     end
 
     def pull_master
       `git pull origin master`
+      self
     end
 
     def generate_url
