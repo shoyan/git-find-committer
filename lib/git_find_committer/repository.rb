@@ -12,6 +12,10 @@ module GitFindCommitter
       end
     end
 
+    def pull_master
+      `git pull origin master`
+    end
+
     def generate_url
       if @config.access_token.nil?
         "#{@config.url}/#{@config.repo}"
