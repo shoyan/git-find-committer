@@ -2,7 +2,12 @@
 
 [![CircleCI](https://circleci.com/gh/shoyan/git_find_committer/tree/master.svg?style=svg)](https://circleci.com/gh/shoyan/git_find_committer/tree/master)
 
-The GitFindCommitter is a tool to find the committers as a target the modified file. As the name, look for the committers from the commit history of Git. For example, if you modify the hoge.rb and fuga.rb in fix branch. GitFindCommitter looks for a committer to target the hoge.rb and fuga.rb.
+The git_find_commiter is a tool to seek committers from the commit history of git.
+This tool will help the code review your team.
+
+In Japanese.
+
+* http://48n.jp/blog/2016/07/25/introduce-to-git-find-committer/
 
 ## Installation
 

@@ -14,7 +14,7 @@ module GitFindCommitter
     end
 
     def pull_master
-      `git pull origin master`
+      `cd #{@config.tmp_repo_path} && git pull origin master`
       self
     end
 
